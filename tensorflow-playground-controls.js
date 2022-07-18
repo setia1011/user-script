@@ -84,12 +84,12 @@
     });
 
     // Tensorflow Playground
-    var limit = 0.001;
+    var limit = '0.001';
 
     // Loss test control
     $("body").on('DOMSubtreeModified', "#loss-test", function(e) {
         // get test loss data
-        let loss_test = parseInt($(this).text());
+        let loss_test = $(this).text();
         // set limit
         if (loss_test === limit) {
             // pause/stop training
@@ -100,7 +100,7 @@
     // Loss train control
     $("body").on('DOMSubtreeModified', "#loss-train", function(e) {
         // get test loss data
-        let loss_train = parseInt($(this).text());
+        let loss_train = $(this).text();
         // set limit
         if (loss_train === limit) {
             // pause/stop training
