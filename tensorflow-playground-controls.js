@@ -52,7 +52,7 @@
             if (milliseconds > 1000) milliseconds %= 1000;
             // set the stopwatch
             setStopwatch(hours, minutes, seconds, milliseconds);
-
+            // print time
             console.log(hours+":"+minutes+":"+seconds+":"+milliseconds);
 
         }, 1); // update time in stopwatch after every 1ms
@@ -83,23 +83,26 @@
         }
     });
 
+    // Tensorflow Playground
+    var limit = 0.001;
+
     // Loss test control
     $("body").on('DOMSubtreeModified', "#loss-test", function(e) {
         // get test loss data
-        let loss_test = $(this).text();
+        let loss_test = parseInt($(this).text());
         // set limit
-        if (loss_test === '0.001') {
+        if (loss_test === limit) {
             // pause/stop training
             $('#play-pause-button').click();
         }
     });
-    
+
     // Loss train control
     $("body").on('DOMSubtreeModified', "#loss-train", function(e) {
         // get test loss data
-        let loss_train = $(this).text();
+        let loss_train = parseInt($(this).text());
         // set limit
-        if (loss_train === '0.001') {
+        if (loss_train === limit) {
             // pause/stop training
             $('#play-pause-button').click();
         }
