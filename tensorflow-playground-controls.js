@@ -93,6 +93,7 @@
             $('#play-pause-button').click();
         }
     });
+    
     // Loss train control
     $("body").on('DOMSubtreeModified', "#loss-train", function(e) {
         // get test loss data
